@@ -9,4 +9,6 @@ fun main(args: Array<String>) {
         println(String(byteArray))
     }
     Thread.sleep(1000)
+
+//    0000 0011  00001001  00001011
 }
