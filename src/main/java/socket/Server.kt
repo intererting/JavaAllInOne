@@ -13,10 +13,17 @@ fun main(args: Array<String>) {
 }
 
 fun handle(clientSocket: Socket) {
-    Thread(Runnable {
-        while (true) {
-            clientSocket.getOutputStream().write("hahaha".toByteArray(charset = Charset.forName("utf-8")))
-            Thread.sleep(2000)
-        }
-    }).start()
+//    Thread(Runnable {
+//        while (true) {
+//            clientSocket.getOutputStream().write("hahaha".toByteArray(charset = Charset.forName("utf-8")))
+//            Thread.sleep(2000)
+//        }
+//    }).start()
+
+    val byteArray = ByteArray(1024)
+
+    while (clientSocket.getInputStream().read(byteArray).also {
+        } != -1)
+        println(String(byteArray))
+
 }
